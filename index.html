@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event On Key</title>
+    <style>
+        #insert{
+            /* border: 3px solid red; */
+            height: 500px;
+            width: 50%;
+            margin: 10px; 
+            margin-left: 25%;           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        .color, table,th,td{
+            border: 2px solid black;
+            table-layout: fixed;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="insert">
+        <div class="key">Press Key and see the magic</div>
+    </div>
+</body>
+<script>
+    const insert=document.getElementById("insert");
+    console.log(insert);
+    window.addEventListener("keydown",(e)=>{
+        // console.log(e.key);
+        // console.log(e.code);
+
+        insert.innerHTML=`
+            <div class="color">
+                <table>
+                    <tr>
+                        <th>Key</th>
+                        <th>KeyCode</th>
+                        <th>code</th>
+                    </tr>
+                    <tr>
+                        <td>${e.key===" " ? "space" : e.key}</td>
+                        <td>${e.keyCode}</td>
+                        <td>${e.code}</td>
+                    </tr>
+                </table>
+            </div>
+        `
+            
+    })
+</script>
+</html>
